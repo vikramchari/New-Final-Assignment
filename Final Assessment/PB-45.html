@@ -1,0 +1,227 @@
+<!-- Create a sign up form like below. After entering all the details when user click on the submit button , 
+it should save all the data in localStorage.(Note: Use HTML5 WebStorage API) -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Local Storage</title>
+  </head>
+  <!-- Internal styling used -->
+  <style>
+    body {
+      height: 20%;
+      width: 30%;
+      margin: 0 auto;
+    }
+    #verify {
+      background: rgb(26, 17, 66);
+    }
+    #signup {
+      padding: 20px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;
+      height: 10px;
+    }
+    hr {
+      border: 1px solid #f1f1f1;
+      margin-bottom: 25px;
+    }
+
+    button {
+      background-color: rgb(224, 179, 55);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      opacity: 0.9;
+    }
+
+    button:hover {
+      opacity: 1;
+    }
+    .container {
+      padding: 16px;
+
+      color: white;
+    }
+    h2 {
+      background-color: rgb(224, 179, 55);
+      text-align: center;
+      font-style: italic;
+      padding: 10px;
+    }
+    .login-form-header {
+      margin-top: 50px;
+    }
+    .container-login {
+      background-color: lightgray;
+    }
+    .form-container {
+      padding: 30px;
+    }
+    .forgot-pswd {
+      text-align: center;
+      text-decoration: underline;
+      cursor: pointer;
+      color: rgb(80, 136, 117);
+    }
+  </style>
+  <body>
+    <div id="result"></div>
+    <div id="verify">
+      <form id="signup" style="border: 1px solid #ccc">
+        <div class="container">
+          <h2>Sign Up Here</h2>
+          <hr />
+
+          <input type="text" placeholder=" FirstName" id="firstname" required />
+
+          <input
+            type="text"
+            placeholder=" LastName"
+            name="lastname"
+            id="lastname"
+            required
+          />
+
+          <input
+            type="text"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+          />
+
+          <input
+            type="password"
+            placeholder=" Password"
+            name="psw"
+            id="pwd"
+            required
+          />
+
+          <input
+            type="password"
+            placeholder="Repeat Password"
+            name="psw-repeat"
+            id="rpwd"
+            required
+          />
+          <label style="text-align: center; display: block"
+            >Enter your date of birth:</label
+          >
+          <input
+            type="date"
+            id="dob"
+            style="display: block; margin: 15px auto 5px; width: 330px"
+          /><br />
+          <input type="radio" id="male" /> Male
+          <input type="radio" id="female" /> Female
+          <input type="radio" id="others" /> Others
+
+          <br />
+          <input id="checkbox" type="checkbox" />
+          <label for="checkbox"> I agree to these Terms and Conditions</label>
+
+          <button type="submit">Sumit here</button>
+        </div>
+      </form>
+    </div>
+    <div>
+      <h3 class="login-form-header">Login Form</h3>
+
+      <div style="border: 1px solid #ccc">
+        <div class="container-login">
+          <div class="form-container">
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              id="loginemail"
+              required
+            />
+
+            <input
+              type="password"
+              placeholder="Enter Password"
+              id="loginpwd"
+              required
+            />
+            <label>
+              <input type="checkbox" checked="checked" name="remember" />
+              Remember me
+            </label>
+            <button type="submit" id="login">Login</button>
+            <span class="forgot-pswd">Forgot password?</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function store() {
+        //stores items in the localStorage
+        var firstname = document.getElementById("firstname").value;
+        var lastname = document.getElementById("lastname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("pwd").value;
+        var repeatpwd = document.getElementById("rpwd").value;
+        var dob = document.getElementById("dob").value;
+        if (password !== repeatpwd) {
+          alert("Password not matched");
+        }
+
+        const values = {
+          firstname: firstname,
+          lastname: lastname,
+          email: email,
+          password: password,
+          dob: dob,
+        };
+
+        window.localStorage.setItem("values", JSON.stringify(values));
+        //converting object to string
+      }
+
+      function check() {
+        var loginemail = document.getElementById("loginemail").value;
+        var loginpassword = document.getElementById("loginpwd").value;
+        var val = window.localStorage.getItem("values");
+        var jsons = JSON.parse(val);
+        var pass = jsons.password;
+        var mail = jsons.email;
+        if (loginemail == mail && loginpassword == pass) {
+          const element = document.getElementById("verify");
+          element.remove();
+          const para = document.createElement("h1");
+          para.innerHTML = "Login Success";
+          document.getElementById("result").appendChild(para);
+        } else if (loginemail != mail || loginpassword != pass) {
+          const element = document.getElementById("verify");
+          element.remove();
+          const para = document.createElement("h1");
+          para.innerHTML = "Login UnSuccessfull Please try again!";
+          document.getElementById("result").appendChild(para);
+        }
+      }
+      window.onload = function () {
+        //ensures the page is loaded before functions are executed.
+        document.getElementById("signup").onsubmit = store;
+        document.getElementById("login").onclick = check;
+      };
+    </script>
+  </body>
+</html>

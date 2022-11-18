@@ -1,0 +1,154 @@
+<!-- Create the below layout using Flexbox and Media Query -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout Flexbox media query</title>
+    <link rel="text/css" href="PB-6.css" />
+    <style>
+      /* Media query for mobile devices*/
+      .first-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .div-block {
+        width: 48%;
+        height: 50px;
+        background: orange;
+      }
+      .second-container {
+        width: 100%;
+        height: 200px;
+        background-color: rgb(227, 252, 0);
+        margin-top: 20px;
+      }
+      .third-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        margin-top: 20px;
+      }
+      .div-block3 {
+        width: 100%;
+        height: 50px;
+        background-color: rgb(89, 89, 240);
+      }
+      .fourth-container {
+        flex-direction: column;
+        display: flex;
+        row-gap: 10px;
+        margin-top: 20px;
+      }
+      .div-block4 {
+        background-color: gainsboro;
+        height: 125px;
+        width: 100%;
+      }
+      .tablet-selector {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+      }
+      @media only screen and (max-width: 760px) {
+        .first-container {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .div-block {
+          width: 100%;
+          height: 50px;
+          background: orange;
+          margin-bottom: 10px;
+        }
+        .div-block3 {
+          height: 150px;
+        }
+      }
+      /* Media query for Tablet devices*/
+      @media only screen and (min-width: 769px) {
+        .third-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        .div-block3 {
+          width: 32%;
+          height: 200px;
+        }
+        .fourth-container {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .div-block4 {
+          width: 24%;
+        }
+      }
+
+      @media only screen and (min-width: 760px) and (max-width: 1023px) {
+        .tablet-selector {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .fourth-container {
+          display: flex;
+          flex-direction: column;
+        }
+        .div-block4 {
+          width: 48%;
+        }
+      }
+      /* Media query for PC and large devices */
+      @media only screen and (min-width: 1024px) {
+        .div-block4 {
+          width: 49%;
+          height: 150px;
+          background-color: gainsboro;
+        }
+        .fourth-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .tablet-selector {
+          display: flex;
+          flex-direction: row;
+          width: 49.5%;
+          column-gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header blocks -->
+      <div class="first-container">
+        <div class="div-block"></div>
+        <div class="div-block"></div>
+      </div>
+      <!-- <Containers -->
+      <div class="second-container"></div>
+      <div class="third-container">
+        <div class="div-block3"></div>
+        <div class="div-block3"></div>
+        <div class="div-block3"></div>
+      </div>
+      <div class="fourth-container">
+        <div class="tablet-selector">
+          <div class="div-block4"></div>
+          <div class="div-block4"></div>
+        </div>
+        <!-- Footer blocks -->
+        <div class="tablet-selector">
+          <div class="div-block4"></div>
+          <div class="div-block4"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

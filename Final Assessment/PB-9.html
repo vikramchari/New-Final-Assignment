@@ -1,0 +1,76 @@
+<!-- Created this page with these 3 cards using HTML5 and CSS3,SCSS,Box Model,CSS3 Selectors. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <Internal Styling -->
+    <style>
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+        width: 25%;
+      }
+
+      .container {
+        padding: 2px 30px;
+      }
+      .cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 60px 40px;
+      }
+      .card {
+        position: relative;
+        text-align: center;
+        color: white;
+      }
+      .container {
+        position: absolute;
+        bottom: 4px;
+        background: white;
+        color: black;
+        text-align: left;
+      }
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <Header> -->
+    <h3 style="color: green">Most Powerful team on earch</h3>
+
+    <h2>We are team of expert design</h2>
+    <p style="width: 50%; margin: 0 auto">
+      We don’t make assumptions about the rest of your technology stack, so you
+      can develop new features in React without rewriting existing code.
+    </p>
+    <!-- Cards container starts here -->
+    <div class="cards-container">
+      <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4><b>John Doe</b></h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4><b>John Doe</b></h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img_avatar.png" alt="Avatar" style="width: 100%" />
+        <div class="container">
+          <h4><b>John Doe</b></h4>
+          <p>Architect & Engineer</p>
+        </div>
+      </div>
+      <!-- Cards container ends here -->
+    </div>
+  </body>
+</html>

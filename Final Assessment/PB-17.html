@@ -1,0 +1,66 @@
+<!-- Create a Age Calculator . After entering Date Of Birth, if you click on
+Calculate button it will display the age. And here you can select a specific
+date to calculate the age on that specific date. Note : Use JavaScript Date
+object. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Age Calculater</title>
+    <!-- Internal styling used -->
+    <style>
+      label {
+        width: 30%;
+        display: inline-block;
+      }
+      #button-calculate {
+        background-color: rgb(35, 167, 35);
+        padding: 8px 25px;
+        border: 1px solid rgb(35, 167, 35);
+        color: white;
+        text-align: center;
+      }
+      .container {
+        margin: 0 auto;
+        width: 50%;
+        text-align: center;
+        background: rgb(221, 229, 236);
+        padding-bottom: 30px;
+      }
+      h4 {
+        background-color: rgb(115, 115, 235);
+        color: white;
+        padding: 10px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h4>Modify the values and click the button to use</h4>
+      <label>Date of birth</label>
+      <input type="date" id="txtStartDate" />
+      <p>
+        <label>Age at the date of</label> <input type="date" id="txtEndDate" />
+      </p>
+
+      <button id="button-calculate" onclick="calculateAge();">Calculate</button>
+    </div>
+    <script>
+      function calculateAge() {
+        var startDateInput = document.getElementById("txtStartDate").value;
+        var endDateInput = document.getElementById("txtEndDate").value;
+
+        // convert user input values into date object
+        var startDate = new Date(startDateInput);
+        var endDate = new Date(endDateInput);
+
+        // get difference between two date;
+        var difference = endDate - startDate.getTime();
+
+        var ageDate = new Date(difference);
+        var calculatedAge = Math.abs(ageDate.getUTCFullYear() - 1970);
+        alert("The age is" + calculatedAge);
+      }
+    </script>
+  </body>
+</html>

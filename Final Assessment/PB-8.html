@@ -1,0 +1,147 @@
+<!-- Contact Us page . Used HTML5,CSS3,SASS.Define SASS variables, function , mixins, 
+nesting to create the page. -->
+<!-- Note: Sass not used as it has some errors in the system  used online compiler to convert scss to css-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact US form</title>
+    <!-- Internal styling -->
+    <style>
+      body {
+        background-color: aqua;
+      }
+      .content-part {
+        display: flex;
+        flex-direction: row;
+        height: 500px;
+        margin-top: 50px;
+      }
+      .form-contant {
+        width: 60%;
+        background-color: white;
+        padding: 20px 70px;
+      }
+      .reach-us-content {
+        width: 40%;
+        background-color: rgb(42, 42, 173);
+      }
+      .contact-us-form {
+        margin: 20px 35px;
+      }
+      input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 1px solid gainsboro;
+        width: 230px;
+      }
+      .form-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .parts {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+      }
+      textarea {
+        width: 90%;
+        height: 100px;
+        border: 1px solid gainsboro;
+      }
+      button {
+        width: 10%;
+        height: 30px;
+        border-radius: 10px;
+        background: rgb(42, 42, 173);
+        border: 1px solid rgb(42, 42, 173);
+        color: white;
+        margin-top: 20px;
+      }
+      .inside-container {
+        padding: 20px 30px;
+        color: whitesmoke;
+      }
+      .span-class {
+        width: 200px;
+        display: inline-block;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-us-form">
+      <!-- Heading -->
+      <header>
+        <h1>Contact with US</h1>
+        <p>
+          Build encapsulated components that manage their own state, then
+          compose them to make complex UIs.
+        </p>
+      </header>
+      <div class="content-part">
+        <!-- Signup section -->
+        <div class="form-contant">
+          <div>
+            <h3 style="color: blue" class="send-a-request">Send a request</h3>
+          </div>
+          <div class="form">
+            <form class="form-container">
+              <div class="parts">
+                <div class="sub-part">
+                  <p><label for="name">Name</label></p>
+
+                  <p><input type="text" /></p>
+                </div>
+                <div class="sub-part">
+                  <p><label for="name">Phone</label></p>
+                  <p><input type="text" /></p>
+                </div>
+              </div>
+              <div class="parts">
+                <div class="sub-part">
+                  <p><label for="name">Email</label></p>
+
+                  <p><input type="text" /></p>
+                </div>
+                <div class="sub-part">
+                  <p><label for="name">Subject</label></p>
+
+                  <p><input type="text" /></p>
+                </div>
+              </div>
+              <div class="message">
+                <p>Message</p>
+                <textarea></textarea>
+              </div>
+              <button>Send</button>
+            </form>
+          </div>
+          <!-- Signup section ends -->
+        </div>
+        <!-- details section -->
+        <div class="reach-us-content">
+          <div class="inside-container">
+            <h3>Reach US</h3>
+            <div>
+              <span class="span-class">Email</span>
+              <span>ABC@gmail.com</span>
+            </div>
+            <div>
+              <span class="span-class">phone</span>
+              <span>9848022338</span>
+            </div>
+            <div style="display: flex">
+              <span class="span-class">Address</span>
+              <span><p>@cognizant technology H-no : 12-32</p></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

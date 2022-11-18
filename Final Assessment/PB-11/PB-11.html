@@ -1,0 +1,112 @@
+<!-- This is home page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website</title>
+    <!-- Internal styling used -->
+    <style>
+      .header-sec {
+        background-color: blue;
+        height: 50px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+      }
+      .header-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .left-portion {
+        width: 30%;
+        height: 500px;
+      }
+      .right-portion {
+        width: 65%;
+      }
+      .article-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 40px;
+      }
+      img {
+        width: 100%;
+        height: 500px;
+      }
+      .explore-more {
+        background-color: blue;
+        color: white;
+        height: 30px;
+        border: 1px solid blue;
+        cursor: pointer;
+      }
+      .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        color: white;
+        margin-top: 30px;
+        height: 40px;
+      }
+      .logo {
+        margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header section Starts -->
+    <header class="header-sec">
+      <h2 class="logo">Auto Mob-Machanic</h2>
+      <nav class="header-nav">
+        <p>Home</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">Login</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">Contac@7654312345</p>
+        &nbsp;
+      </nav>
+    </header>
+    <!-- Container/Article Section -->
+    <article class="article-section">
+      <div class="left-portion">
+        <img src="img_avatar.png" />
+      </div>
+      <div class="right-portion">
+        <h2>About-us</h2>
+        <p>
+          React makes it painless to create interactive UIs. Design simple views
+          for each state in your
+        </p>
+        <p>
+          We dont make assumptions about the rest of your technology stack, so
+          you can develop new features in React without rewriting existing code.
+        </p>
+        <h2>How it Works?</h2>
+        <h1>choose service</h1>
+        <p>chosse perfect sevice for your car</p>
+        <h2>Book an appointment</h2>
+        <p>chosse perfect sevice for your car</p>
+        <h2>Get your car fixed</h2>
+        <p>
+          React makes it painless to create interactive UIs. Design simple views
+        </p>
+        <a href="PB-11-services.html"
+          ><button class="explore-more">Explore More</button></a
+        >
+      </div>
+    </article>
+    <!-- Footer Section Starts -->
+    <footer class="footer-section">
+      <div>@Copy Rights Reserved 2022</div>
+    </footer>
+    <!-- Footer Section Ends -->
+  </body>
+</html>

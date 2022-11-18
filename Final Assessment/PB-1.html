@@ -1,0 +1,163 @@
+<!-- Created a registration form for XYZ University. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Universites Registration</title>
+    <!-- internal styling -->
+    <style>
+      tr,
+      td,
+      th {
+        border: 1px solid black;
+      }
+
+      table {
+        width: 600px;
+      }
+
+      .to-center {
+        text-align: center;
+      }
+
+      .require:after {
+        content: "*";
+        color: red;
+      }
+      .text-area-field {
+        resize: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Table start -->
+    <table border="1">
+      <tr>
+        <th colspan="3" class="to-to-center">
+          XYZ University Student Registration
+        </th>
+      </tr>
+
+      <form>
+        <tr>
+          <th rowspan="4">Personal Details</th>
+
+          <td><label class="require">First Name</label></td>
+          <!-- Max length 10 characters  -->
+          <td><input type="text" maxlength="10" required /></td>
+        </tr>
+
+        <tr>
+          <td class="require">Last Name</td>
+          <!-- Max length 10 characters  -->
+          <td><input type="text" maxlength="10" required /></td>
+        </tr>
+
+        <tr>
+          <td class="require">Date of Birth</td>
+
+          <td><input type="text" required /></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+
+          <td>
+            <input type="radio" class="male" name="gender" /><label for="male"
+              >Male</label
+            >
+
+            <input type="radio" class="female" name="gender" /><label
+              for="female"
+              >Female</label
+            >
+
+            <input type="radio" class="other" name="gender" /><label for="other"
+              >Other</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <th rowspan="4">Academy Details</th>
+
+          <td>Degree</td>
+
+          <td>
+            <select>
+              <option>Bachelors</option>
+
+              <option>Masters</option>
+
+              <option>Doctorate</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="require">Specialization</td>
+          <!-- Max length 10 characters  -->
+          <td><input type="text" maxlength="40" name="special" required /></td>
+        </tr>
+
+        <tr>
+          <td>Mode of instruction</td>
+
+          <td>
+            <input type="checkbox" class="classroom" name="classroom" /><label
+              for="classroom"
+              >Classroom</label
+            >
+
+            <input type="checkbox" class="online" name="online" /><label
+              for="online"
+              >online</label
+            >
+          </td>
+        </tr>
+
+        <tr>
+          <td class="require">Current GPA</td>
+
+          <td><input type="number" max="5" step="0.1" required /></td>
+        </tr>
+
+        <tr>
+          <th rowspan="2">Contact Details</th>
+
+          <td class="require">Phone Number</td>
+
+          <td><input type="text" required /></td>
+        </tr>
+
+        <tr>
+          <td class="require">Address</td>
+          <!-- Required, max 4 rows of 40 characters each -->
+          <td>
+            <textarea
+              class="text-area-field"
+              rows="4"
+              cols="40"
+              required
+            ></textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <th colspan="3" class="to-center">
+            I assure all the details entered are correct.
+
+            <input type="checkbox" class="yes" name="yes" /><label for="yes"
+              >Yes</label
+            >
+          </th>
+        </tr>
+        <tr>
+          <td colspan="3" class="to-center">
+            <button type="submit">Submit</button>
+          </td>
+        </tr>
+      </form>
+      <!-- Table ended -->
+    </table>
+  </body>
+</html>

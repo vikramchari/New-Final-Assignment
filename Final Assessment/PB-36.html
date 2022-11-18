@@ -1,0 +1,115 @@
+<!-- JavaScript code to make online booking of theatre tickets and calculate the total price 
+based on the below conditions:  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Ticket Booking</title>
+    <!-- Internal styling used -->
+    <style>
+      body {
+        margin: 0 auto;
+        width: 50%;
+      }
+      #container {
+        height: 100px;
+        width: 500px;
+        border: 1px solid #d3e3f7;
+        text-align: left;
+        color: #0b51ac;
+        padding: 5px;
+        margin-left: 10px;
+      }
+
+      #count-text-box {
+        text-align: center;
+        margin-top: 20px;
+      }
+      #heading {
+        text-align: center;
+        width: 500px;
+        border: 1px solid #cee2fa;
+        text-align: center;
+        color: #08499e;
+        background-color: #cee2fa;
+        font-size: 20;
+        padding: 5px;
+        margin-top: 40px;
+        margin-left: 10px;
+      }
+      .offer-link {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="heading">
+      <h2>Booking Summary</h2>
+    </div>
+    <div id="container">
+      <body>
+        <form id="count-text-box">
+          <input
+            type="text"
+            placeholder="Enter No of Seats"
+            id="input_id"
+            value=""
+          />
+          <input type="button" value="Submit" onclick="onSubmit()" />
+        </form>
+        <div id="ticket-description"></div>
+      </body>
+
+      <!-- Javascript function to check condition based on number of tickes -->
+      <script>
+        function onSubmit() {
+          var variable = document.getElementById("input_id").value;
+
+          if (variable > 5) {
+            alert("No Booking Slot is Available");
+          }
+
+          if (variable <= 2) {
+            const elmnt = document.getElementById("count-text-box");
+            elmnt.remove();
+            document.getElementById("ticket-description").innerHTML =
+              "Cost per ticket is: $9";
+            const total = document.createElement("p");
+            total.innerHTML = "Total Cost is: $" + variable * 9;
+            document.getElementById("ticket-description").appendChild(total);
+          }
+          if (variable > 2 && variable <= 5) {
+            var dis = variable;
+            var totalcost = variable * 9;
+            var cost = 9;
+            var val = 0;
+            var div = 5;
+            for (var i = 1; i <= dis; i++) {
+              val += cost * (div / 100);
+              div += 2;
+            }
+
+            const elmnt = document.getElementById("count-text-box");
+            elmnt.remove();
+            document.getElementById("ticket-description").innerHTML =
+              "Cost per ticket is: $9";
+            const total = document.createElement("p");
+            total.innerHTML = "Total Cost is: $" + variable * 9; //calculating the total pice
+            document.getElementById("ticket-description").appendChild(total);
+            const discount = document.createElement("p");
+            discount.innerHTML =
+              "Congratulations! " +
+              variable +
+              " seats are eligible for discount." +
+              `<a class="offer-link" onclick=alert(${
+                totalcost - val
+              })>Apply</a>`;
+            document.getElementById("ticket-description").appendChild(discount);
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!-- Use Html5 Drag and Drop API to drag the image from one div and drop in other -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drag and Drop</title>
+    <!-- Internal styling used -->
+    <style>
+      img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .container {
+        display: flex;
+        margin-bottom: 25px;
+        width: 50%;
+        margin: 0 auto;
+      }
+      h2,
+      h3 {
+        text-align: center;
+      }
+
+      .divContainer {
+        flex: 1;
+        border: 2px solid black;
+        padding: 30px;
+      }
+      .divContainer {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <h2>Drag and Drop</h2>
+      <h3>Drag image between these two elements</h3>
+      <div class="container">
+        <div
+          class="divContainer"
+          ondrop="drop(event)"
+          ondragover="dragDrop(event)"
+        >
+          <img
+            id="first-div-drag"
+            src="Image-parrot.jpg"
+            draggable="true"
+            ondragstart="drag(event)"
+          />
+        </div>
+        <div
+          class="divContainer"
+          ondrop="drop(event)"
+          ondragover="dragDrop(event)"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Javascript function for drag and drop demo -->
+    <script>
+      function dragDrop(action) {
+        action.preventDefault();
+      }
+
+      function drag(action) {
+        action.dataTransfer.setData("text", action.target.id);
+      }
+
+      function drop(action) {
+        action.preventDefault();
+        var data = action.dataTransfer.getData("text");
+        action.target.appendChild(document.getElementById(data));
+      }
+    </script>
+  </body>
+</html>

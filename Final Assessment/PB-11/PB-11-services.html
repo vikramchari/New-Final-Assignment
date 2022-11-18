@@ -1,0 +1,164 @@
+<!-- <Services sections click on Explore more button in home page -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website</title>
+    <!-- Internal styling used -->
+    <style>
+      .header-sec {
+        background-color: blue;
+        height: 50px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+      }
+      .header-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .footer-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        color: white;
+        margin-top: 30px;
+        height: 40px;
+      }
+      .logo {
+        margin-left: 30px;
+      }
+      .cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+      .card {
+        width: 20%;
+        border: 1px solid gainsboro;
+        padding: 0 50px;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+        object-fit: none;
+        height: 200px;
+      }
+      .time {
+        color: red;
+        margin: 30px 0px 0px 30px;
+      }
+      #clockdiv {
+        display: inline-block;
+      }
+      article {
+        margin: 5px 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header section -->
+    <header class="header-sec">
+      <h2 class="logo">Auto Mob-Machanic</h2>
+      <nav class="header-nav">
+        <p>Home</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">Login</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">Contac@7654312345</p>
+        &nbsp;
+      </nav>
+    </header>
+    <!-- Container Section Starts -->
+    <article class="article-section">
+      <h2>Car repair Services</h2>
+      <p>
+        This example uses flexbox for the whole layout. It uses nested flex
+        containers.
+      </p>
+      <p>
+        This example uses flexbox for the middle part only (i.e. the nav,
+        article, and aside). The header and footer remain block elements.
+      </p>
+      <div class="cards-container">
+        <div class="card">
+          <h3 class="repair">Car care service</h3>
+          <img src="photo1.jpg" alt="Avatar" style="width: 100%" />
+          <div class="container">
+            <p>hello world of repair</p>
+            <p>Offer 20%</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="repair">Body Repair service</h3>
+          <img src="photo-2.webp" alt="Avatar" style="width: 100%" />
+          <div class="container">
+            <p>hello world of repair</p>
+            <p>Offer 15%</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="repair">Preventive service</h3>
+          <img src="photo-3.jpg" alt="Avatar" style="width: 100%" />
+          <div class="container">
+            <p>hello world of repair</p>
+            <p>Offer 10%</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="time">
+      **Offer ends in
+      <div id="clockdiv"></div>
+    </div>
+    <!-- Footer Section Starts -->
+    <footer class="footer-section">
+      <div>@Copy Rights Reserved 2022</div>
+    </footer>
+
+    <!-- JS has been used inside the Script tag -->
+
+    <script>
+      var time_in_minutes = 10;
+      var current_time = Date.parse(new Date());
+      var deadline = new Date(current_time + time_in_minutes * 60 * 1000);
+
+      function time_remaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+          total: t,
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds,
+        };
+      }
+      function run_clock(id, endtime) {
+        var clock = document.getElementById(id);
+        function update_clock() {
+          var t = time_remaining(endtime);
+          clock.innerHTML = t.minutes + "m: " + t.seconds + "sec: ";
+          if (t.total <= 0) {
+            clearInterval(timeinterval);
+          }
+        }
+        update_clock(); // run function once at first to avoid delay
+        var timeinterval = setInterval(update_clock, 1000);
+      }
+      run_clock("clockdiv", deadline);
+    </script>
+  </body>
+</html>

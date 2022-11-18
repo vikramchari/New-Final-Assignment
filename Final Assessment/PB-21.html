@@ -1,0 +1,119 @@
+<!-- Use Array methods like push(),pop(),shift(),unshift()  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Array Methods to add delete shift unshift</title>
+    <!-- <Internal styling used -->
+    <style>
+      .hide {
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      p {
+        white-space: pre;
+      }
+      input,
+      button {
+        padding: 10px;
+        border: 1px solid lightgray;
+        border-radius: 2px;
+      }
+      #textInput {
+        margin: 20px 0;
+        padding: 5px;
+        border: 1px solid;
+        margin: 20px auto;
+        width: 200px;
+      }
+      body {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      #demo1 {
+        border: 1px solid;
+        width: 40%;
+        margin: 20px auto;
+        padding: 10px 0;
+      }
+    </style>
+  </head>
+  <html>
+    <body>
+      <h2>JavaScript Array Methods</h2>
+      <!-- Click Buttons to perform operations -->
+      <button onclick="onButtonClick()">Add element</button>
+      <button onclick="popDemo()">Remove Element</button>
+
+      <button onclick="clearArray()">Remove all</button>
+      <button onclick="unShiftDemo()">Unshift</button>
+      <button onclick="ShiftDemo()">shift</button>
+      <button onclick="toUpper()">To Upper case</button>
+      <input
+        class="hide"
+        type="text"
+        id="textInput"
+        value=""
+        placeholder="Enter element"
+      />
+      <p id="demo1"></p>
+      <p id="demo2"></p>
+      <p id="demo3"></p>
+      <button onclick="viewItems()">Submit</button>
+
+      <!-- javascript functionality added in the script tag -->
+
+      <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+        document.getElementById("demo1").innerHTML =
+          "The initial array Items are" + "\n" + fruits.join("\n");
+
+        //To pop the last element
+        function popDemo() {
+          fruits.pop();
+          document.getElementById("demo2").innerHTML =
+            "The array Items after popup are" + "\n" + fruits.join("\n");
+        }
+
+        function onButtonClick() {
+          document.getElementById("textInput").className = "show";
+        }
+
+        // To view all the elements in the array
+        function viewItems() {
+          boxvalue = document.getElementById("textInput").value;
+          fruits.push(boxvalue);
+          document.getElementById("demo2").innerHTML =
+            "The Array after adding new items are" + "\n" + fruits;
+        }
+        // To clear all the elements in the array
+        function clearArray() {
+          fruits = [];
+          document.getElementById("demo2").innerHTML =
+            "all items removed" + " length of array = " + fruits.length;
+        }
+        // Shiftdemo
+        function unShiftDemo() {
+          fruits.unshift("Lemon", "Pineapple");
+          document.getElementById("demo2").innerHTML = fruits;
+        }
+        // Unshiftdemo
+        function ShiftDemo() {
+          fruits.shift();
+          document.getElementById("demo2").innerHTML = fruits;
+        }
+        // To Uppercase demo
+        function toUpper() {
+          fruits = fruits.map(function (x) {
+            return x.toUpperCase();
+          });
+          document.getElementById("demo2").innerHTML = fruits;
+        }
+      </script>
+    </body>
+  </html>
+</html>

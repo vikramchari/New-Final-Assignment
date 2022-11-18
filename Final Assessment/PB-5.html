@@ -1,0 +1,99 @@
+<!--  Create the below Form using  HTML5 and CSS -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dine Booking</title>
+    <!-- Used Internal styling -->
+    <style>
+      .label-style {
+        width: 150px;
+        display: inline-block;
+      }
+      .main-heading {
+        text-align: center;
+      }
+      .form-content {
+        margin: 0 auto;
+        width: fit-content;
+        border: 1px solid;
+        padding: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <div class="form-content">
+        <h3 class="main-heading">Dine Booking</h3>
+        <p>
+          <span class="label-style"
+            ><label for="cheese">Visitor Name</label></span
+          >
+
+          <input type="text" name="visitor-name" />
+        </p>
+
+        <p>
+          <span class="label-style"
+            ><label for="cheese">Number of Members</label></span
+          >
+
+          <input type="text" name="visitor-name" />
+        </p>
+        <p>
+          <span class="label-style"
+            ><label for="cheese">Contact No</label></span
+          >
+
+          <input type="text" name="visitor-name" />
+        </p>
+        <p>
+          <span class="label-style"><label for="cheese">Email</label></span>
+
+          <input type="text" name="visitor-name" />
+        </p>
+        <p>
+          <span class="label-style"
+            ><label for="foods">Type of foods</label></span
+          >
+          <!-- <Checkboxes section -->
+          <input type="checkbox" id="South" name="South" value="South" />
+          <label for="South"> South Indian</label>
+          <input type="checkbox" id="north" name="north" value="north" />
+          <label for="north"> North Indian</label>
+          <input type="checkbox" id="western" name="western" value="tomatoes" />
+
+          <label for="western"> western</label>
+          <input
+            type="checkbox"
+            id="capsicum"
+            name="capsicum"
+            value="capcicum"
+          />
+          <label for="capsicum"> Western</label>
+        </p>
+        <p>
+          <span class="label-style"
+            ><label for="Room status">Room Status</label></span
+          >
+          <!-- Using Radio buttons -->
+          <input type="radio" value="small" required />AC
+          <input type="radio" value="medium" />Non-AC
+        </p>
+        <p>
+          <span class="label-style"><label for="Base"> Base</label></span>
+          <!-- Using select tag of HTMl5 -->
+          <select name="base" id="base" required>
+            <option value="panpizza">Pan Pizza</option>
+            <option value="cheesecrust">Cheese Crust</option>
+            <option value="chickenstuffedcrust">Chicken Stuffed Crust</option>
+          </select>
+        </p>
+        <span class="label-style"><button>Book</button></span>
+
+        <button>Reset</button>
+      </div>
+    </form>
+  </body>
+</html>

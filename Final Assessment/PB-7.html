@@ -1,0 +1,149 @@
+<!-- Create the below page using HTML5 semantic element and CSS3 Flexbox with SASS. -->
+<!-- Note as scss compilation is not working used online scss to css converted and added css -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>About-us Semantic elements</title>
+    <!-- internal styling -->
+    <style>
+      .header-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .section-header {
+        background-color: rgb(102, 16, 16);
+        color: white;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .about-us-container {
+        margin: 30px 50px;
+      }
+      .content-all {
+        margin: 35px 0;
+        line-height: 1.8;
+      }
+      .author {
+        float: right;
+        font-style: italic;
+      }
+      .container3 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .know-heading {
+        background-color: rgb(102, 16, 16);
+        color: white;
+        font-weight: 700;
+        padding: 5px;
+        margin-bottom: 0;
+      }
+      .ul-list {
+        margin-top: 5px;
+      }
+      .para {
+        letter-spacing: 1.5px;
+      }
+      .sub-header {
+        color: rgb(102, 16, 16);
+      }
+      .footer-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgb(102, 16, 16);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header starts -->
+    <header class="section-header">
+      <nav class="header-nav">
+        <p style="font-style: italic">Wayfer</p>
+        <p class="para">Home</p>
+        <p class="para">Popular destinations</p>
+        <p class="para">Tour Packages</p>
+        <p class="para">Offers</p>
+        <p class="para">Enquire Us</p>
+        <p class="para">Gallery</p>
+      </nav>
+      <!-- Header ends -->
+    </header>
+    <!-- Article section starts -->
+    <section class="about-us-container">
+      <div class="container1">
+        <h2 class="sub-header">About Us</h2>
+        <h3 class="sub-header">Wayfar- Making momemts to memory</h3>
+        <div class="content-all">
+          My family and I visited The Epcot center this summer. The weather was
+          nice, and Epcot was amazing! I had a great summer together with my
+          family!Dont call Hooks inside loops, conditions, or nested functions.
+          Instead, always use Hooks at the top level of your React function,
+          before any early returns. By following this rule, you ensure that We
+          released an ESLint plugin called eslint-plugin-react-hooks that
+          enforces these two rules. You can add this plugin to your project if
+          youd like to try it.
+        </div>
+
+        <hr />
+      </div>
+      <div class="container2">
+        <h3 class="sub-header">Wayfar- Making momemts to memory</h3>
+        <div class="content-all">
+          My family and I visited The Epcot center this summer. The weather was
+          nice, and Epcot was amazing! I had a great summer together with my
+          family!Dont call Hooks inside loops, conditions, or nested functions.
+          Instead, always use Hooks at the top level of your React function.
+          <span class="author">- Albert Eienstein</span>
+        </div>
+        <p class="content-all">
+          My family and I visited The Epcot center this summer. The weather was
+          nice, and Epcot was amazing! I had a great summer together with my
+          family!Dont call Hooks inside loops, conditions, or nested functions.
+          Instead, always use Hooks at the top level of your React function.
+          <span class="author">- Issac Newton</span>
+        </p>
+        <hr />
+      </div>
+      <div class="container3">
+        <div class="awards-sec">
+          <h3 class="sub-header">Awards</h3>
+          <ol>
+            <li>
+              But now you also know why Hooks work this way, and which issues
+              the rule is preventing.
+            </li>
+            <li>My family and I visited The Epcot center this summer.</li>
+            <li>always use Hooks at the top level of your React function.</li>
+          </ol>
+        </div>
+        <div class="know-aboutus">
+          <h4 class="know-heading">Know about us</h4>
+          <ul class="ul-list">
+            <a href=""><li>Times Travel Award</li></a>
+            <a href=""><li>Vaction IQ</li></a>
+            <a href=""><li>Silver peacock Award</li></a>
+          </ul>
+        </div>
+        <!-- Article section ends  -->
+      </div>
+    </section>
+    <!-- Footer starts -->
+    <footer class="footer-section">
+      <p>@Copy Rights Reserved</p>
+      <nav class="header-nav">
+        <p>Contact Us</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">Terms and Conditions</p>
+        &nbsp;&nbsp;&nbsp;| &nbsp; &nbsp;
+        <p class="para">About Us</p>
+        &nbsp;
+      </nav>
+    </footer>
+    <!-- Footer ends -->
+  </body>
+</html>

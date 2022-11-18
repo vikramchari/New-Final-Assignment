@@ -1,0 +1,122 @@
+<!-- Created a form for XYZ online pizza delivery service with validations  -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XYZ online pizza</title>
+    <style>
+      .asterik {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <table border="1">
+        <tr>
+          <th colspan="2">XYZ Online Delivery</th>
+        </tr>
+        <tr>
+          <th colspan="2">Personal Details</th>
+        </tr>
+        <tr>
+          <td>First Name<span class="asterik">*</span></td>
+
+          <td><input type="text" maxlength="20" required /></td>
+        </tr>
+        <tr>
+          <td>Phone Number <span class="asterik">*</span></td>
+
+          <td><input type="text" required /></td>
+        </tr>
+        <tr>
+          <th colspan="2">Order Preferences</th>
+        </tr>
+        <tr>
+          <td>Size<span class="asterik">*</span></td>
+          <td>
+            <input type="radio" value="small" required />Small
+            <input type="radio" value="medium" />Medium
+            <input type="radio" value="large" />Large
+          </td>
+        </tr>
+        <tr>
+          <td>Base<span class="asterik">*</span></td>
+          <td>
+            <select name="base" id="base" required>
+              <option value="panpizza">Pan Pizza</option>
+              <option value="cheesecrust">Cheese Crust</option>
+              <option value="chickenstuffedcrust">Chicken Stuffed Crust</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Toppings</td>
+          <td>
+            <input type="checkbox" id="cheese" name="cheese" value="cheese" />
+            <label for="cheese"> Cheese</label>
+            <input type="checkbox" id="olives" name="olives" value="olives" />
+            <label for="olives"> Olives</label>
+            <input
+              type="checkbox"
+              id="tomatos"
+              name="tomatos"
+              value="tomatoes"
+            />
+            <label for="tomatos"> Tomatoes</label>
+            <input
+              type="checkbox"
+              id="capsicum"
+              name="capsicum"
+              value="capcicum"
+            />
+            <label for="capsicum"> Capcicum</label>
+            <input
+              type="checkbox"
+              id="jalapenoes"
+              name="jalapenoes"
+              value="jalapenoes"
+            />
+            <label for="jalapenoes"> Jalapenoes</label>
+            <input
+              type="checkbox"
+              id="mushrooms"
+              name="mushrooms"
+              value="mushrooms"
+            />
+            <label for="mushrooms"> Mushrooms</label>
+            <input
+              type="checkbox"
+              id="pepperoni"
+              name="pepperoni"
+              value="pepperoni"
+            />
+            <label for="pepperoni"> Pepperoni</label>
+            <input type="checkbox" id="onions" name="onions" value="onion" />
+            <label for="onions"> Onion</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Additional details</td>
+          <td>
+            <textarea id="details" name="details" rows="2" cols="30">
+            </textarea>
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">
+            Confirm Details and proceed to pay?
+
+            <input type="radio" name="confrim" value="yes" required />Yes
+            <input type="radio" name="confrim" value="no" />No
+          </th>
+        </tr>
+
+        <tr>
+          <th colspan="2"><input type="submit" value="Submit" /></th>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

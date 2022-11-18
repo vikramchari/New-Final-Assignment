@@ -1,0 +1,110 @@
+<!-- Create this page using HTML5 Semantic Elements and CSS3 Flexbox, Layout, Compositors, SASS,Gradient. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layout example</title>
+    <!-- Internal Styling here -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        margin: 20px;
+      }
+      #main {
+        display: flex;
+        flex: 1;
+      }
+      #main > article {
+        flex: 1;
+        order: 1;
+        background: rgb(1, 146, 1);
+        color: white;
+      }
+      #main > aside {
+        flex: 0 0 20vw;
+        box-shadow: 2px 2px 2px 2px red;
+      }
+      #main > aside {
+        background: rgb(241, 87, 87);
+        order: 2;
+        color: white;
+        margin-left: 20px;
+      }
+      header,
+      footer {
+        background: rgb(85, 85, 248);
+        height: 10vh;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        margin: 15px 0;
+        box-shadow: inset;
+      }
+      header,
+      footer,
+      article,
+      nav,
+      aside {
+        padding: 1em;
+      }
+      .parent1 {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: flex-start;
+        width: 45%;
+        margin: 0 auto;
+      }
+      .child {
+        width: 20%;
+        height: 20%;
+        margin: 2%;
+        background-color: green;
+        border-radius: 10px;
+        box-shadow: 2px 4px 0px darkgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+      }
+      .parent2,
+      .parent3 {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header part -->
+    <header>Header</header>
+    <div id="main">
+      <!-- <Article section -->
+      <article>
+        <p>main</p>
+        <div class="parent1">
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+          <div class="child">Item</div>
+        </div>
+      </article>
+      <!-- Sidebar section -->
+      <aside>Sidebar</aside>
+    </div>
+    <!-- Footer part -->
+    <footer>Footer</footer>
+  </body>
+</html>
